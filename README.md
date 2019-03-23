@@ -106,21 +106,45 @@ This should output:
 
 ## A language with branching
 
-Suppose we want to find all the pairs of integers less than 100 that add up to 100.
+Suppose we want to find all the pairs of integers $1\leq i\leq 100$ and $1\leq
+j\leq 100$ such that:
+
+$$ \frac{2}{3} i - 3.5j = 4.5j $$
+
+Our little programming language can handle it.
 
 ```
-let x = 1
-let y = 1
-while x < 100 {
-  while y < 100 {
-    if x + y == 100 {
-      print "solution found:" x:0 y:0
+let i = 0
+let count = 0
+while (i < 100) {
+  let i = i + 1
+  let j = 0
+  while (j < 100) {
+    let j = j + 1
+    if 2*i/3 - 3.5*j == 4.5*j {
+      print "solution for 2*i/3 - 3.5*j == 4.5*j found:" i:0 j:0
+      let count = count + 1
     }
-    let y = y + 1
   }
-  let x = x + 1
 }
+
+print "Total number of solutions:" count:0
 ```
+
+The expected output should be:
+
+
+> ```
+> solution for 2*i/3 - 3.5*j == 4.5*j found: 12 1 
+> solution for 2*i/3 - 3.5*j == 4.5*j found: 24 2 
+> solution for 2*i/3 - 3.5*j == 4.5*j found: 36 3 
+> solution for 2*i/3 - 3.5*j == 4.5*j found: 48 4 
+> solution for 2*i/3 - 3.5*j == 4.5*j found: 60 5 
+> solution for 2*i/3 - 3.5*j == 4.5*j found: 72 6 
+> solution for 2*i/3 - 3.5*j == 4.5*j found: 84 7 
+> solution for 2*i/3 - 3.5*j == 4.5*j found: 96 8 
+> Total number of solutions: 8 
+> ```
 
 
 # Submission
