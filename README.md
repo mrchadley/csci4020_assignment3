@@ -154,5 +154,15 @@ The expected output should be:
    clean and maintainable as possible.  You must include all necessary .java
 files.
 3. Your project will be autograded, so make sure that your project passes all
-   the unit tests.
+   the unit tests when running `gradle test`.
 
+A Makefile is provided to make the development and testing easier.
+
+`make program_1` will run the parser and interpreter on `resources/program_1`,
+etc.
+
+`make tree` will display the parse tree of `./test.expr`.  You can copy the
+desired program to `test.expr` and run `make tree` to examine how your parser is
+interpreting the source code.
+
+`make test` will run `gradle test`.

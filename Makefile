@@ -31,5 +31,8 @@ program_9:
 program_10:
 	$(RUN) resources/program_10.expr
 
+tree:
+	gradle tree
+
 test:
 	gradle test
