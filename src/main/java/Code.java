@@ -1,9 +1,9 @@
 import java.util.*;
 
-interface Expr {
+interface Code {
     double eval(Map<String, Double> v);
 }
 
-class Code {
-
+interface StringCode {
+    String eval(Map<String, Double> v);
 }
